@@ -58,7 +58,7 @@ int loadData(Record *r[])
         fscanf(fp, "%s", r[i]->title);
         fscanf(fp, "%s", r[i]->genre);
         fscanf(fp, "%s", r[i]->content);
-        fscanf(fp, "%d", &p[i]->date);
+        fscanf(fp, "%d", &r[i]->date);
     }
 
     fclose(fp);
