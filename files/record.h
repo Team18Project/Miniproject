@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#define NAME_SIZE 20
+#define BOOK 0
+#define MOVIE 1
+#define DRAMA 2
 
 // 책, 영화, 드라마 제목 변수(book_t, movie_t, drama_t)
 // 장르, 내용, 날짜 변수(genre, content, date)
@@ -9,9 +11,7 @@
 
 typedef struct
 {
-    char book_t[NAME_SIZE];
-    char movie_t[NAME_SIZE];
-    char drama_t[NAME_SIZE];
+    char title[3][20]; // 0: book title, 1: movie title, 2: drama title
     char genre[10];
     char content[30];
     int date;
@@ -32,8 +32,8 @@ typedef struct
 
 
 
-void search_price(Record *p[], int count); // 가격을 찾는 기능
-void search_unit(Record *p[], int count); // 판매단위를 찾는 기능
-void search_name(Record *p[], int count); // 제품이름을 찾는 기능
-void saveData(Record *p[], int count);
-int loadData(Record *p[]);
+void search_price(Record *r[], int count); // 가격을 찾는 기능
+void search_unit(Record *r[], int count); // 판매단위를 찾는 기능
+void search_name(Record *r[], int count); // 제품이름을 찾는 기능
+void saveData(Record *r[], int count);
+int loadData(Record *r[]);
