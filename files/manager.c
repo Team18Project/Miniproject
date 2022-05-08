@@ -36,9 +36,33 @@ void saveData(Record *r[], int count)
     {
         if(r[i]==NULL)
             continue;
-        fprintf(fp, "%s %s %s %d %d %s\n", p[i]->name, p[i]->space, p[i]->simple_ex, p[i]->price, p[i]->unit, p[i]->delivery);
+        fprintf(fp, "%s %s %s %s %d \n", r[i]->kind, r[i]->title, r[i]->genre, r[i]->content, r[i]->date);
     }
 
     fclose(fp);
     printf("=> 저장됨! ");
+}
+
+int loadData(Record *r[])
+{
+    int count=0, i=0;
+    FILE *fp;
+
+    fp=fopen("record.txt", "rt");
+    for(i=0; i<100; i++)
+    {
+        fscanf(fp, "%s", r[i]->kind);
+        if(feof(fp))
+            break;
+        count++;
+        fscanf(fp, "%s", r[i]->title);
+        fscanf(fp, "%s", r[i]->genre);
+        fscanf(fp, "%s", r[i]->content);
+        fscanf(fp, "%d", &p[i]->date);
+    }
+
+    fclose(fp);
+    printf("=> 로딩 성공!\n");
+
+    return count;
 }
