@@ -1,4 +1,5 @@
 #include "record.h"
+#include "manager.h"
 
 void search_date(my_record *r[], int count) // 날짜 검색 기능
 {
