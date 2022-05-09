@@ -5,7 +5,7 @@ int main(void)
     int count=0, menu;
     int index=0;
     int no, deletok;
-    Record *r[100];
+    my_record *r[100];
 
     count=loadData(r);
     index=count;
@@ -24,7 +24,7 @@ int main(void)
             listRecord(r, index); 
         else if(menu==2)
         {
-            r[index]=(Record *)malloc(sizeof(Record)); // 그때마다 메모리를 할당함
+            r[index]=(my_record *)malloc(sizeof(my_record)); // 그때마다 메모리를 할당함
             count+=addRecord(r[index++]); 
         }
         else if(menu==3)
