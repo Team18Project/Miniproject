@@ -36,21 +36,23 @@ int addRecord(my_record *r) {
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r->date);
 
+    r->bookMark=0;
+
     return 1;
 }
 
 void listRecord(my_record *r[], int count){
-    printf("No\n");
-    printf("================================\n");
+    printf("| Kind |  Title  | genre |  content | date |\n");
+    printf("================================================================================= \n");
     for(int i=0; i<count; i++){
         if(r[i]->title == -1) continue;
-        printf("%2d", i+1);
+        printf("%2d ", i+1);
         readRecord(r[i]);
     }
 }
 
 void readRecord(my_record *r){
-    printf("%s %s %s %d\n", r->kind, r->title, r->content, r->date);
+    printf("%s %s %s %s %d\n", r->kind, r->title, r->genre, r->content, r->date);
 
 }
 
