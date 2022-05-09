@@ -4,10 +4,10 @@
 
 typedef struct
 {
-    char kind[20];
-    char title[20];
-    char genre[10];
-    char content[30];
+    char kind[50];
+    char title[50];
+    char genre[20];
+    char content[100];
     int date;
     int bookmark;
 }Record;
