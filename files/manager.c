@@ -43,7 +43,7 @@ void listRecord(my_record *r[], int count){
     printf("No\n");
     printf("================================\n");
     for(int i=0; i<count; i++){
-        if(r[i].title == -1) continue;
+        if(r[i]->title == -1) continue;
         printf("%2d", i+1);
         readRecord(r[i]);
     }
