@@ -36,7 +36,7 @@ int addRecord(my_record *r) {
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r->date);
 
-    r->bookMark=0;
+    r->bookmark=0;
 
     return 1;
 }
@@ -49,6 +49,7 @@ void listRecord(my_record *r[], int count){
         printf("%2d ", i+1);
         readRecord(r[i]);
     }
+    printf("================================================================================= \n");
 }
 
 void readRecord(my_record *r){
