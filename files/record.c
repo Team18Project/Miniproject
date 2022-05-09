@@ -1,7 +1,7 @@
 #include "record.h"
 #include "manager.h"
 
-void search_date(Record *r[], int count) // 날짜 검색 기능
+void search_date(my_record *r[], int count) // 날짜 검색 기능
 {
     int i, num;
 
@@ -14,7 +14,7 @@ void search_date(Record *r[], int count) // 날짜 검색 기능
 }
 
 
-void bookMark(Record *r[], int count) // 북마크 기능
+void bookMark(my_record *r[], int count) // 북마크 기능
 {
     char title[20];
     int i;
