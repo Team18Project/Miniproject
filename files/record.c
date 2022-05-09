@@ -1,6 +1,34 @@
 #include "record.h"
 #include "manager.h"
 
+void search_title(my_record *r[], int count) // 제목 검색 기능
+{
+    int i, 
+    char search[50];
+
+    printf("검색할 제목을 입력하세요: ");
+    scanf("%s", search);
+
+    for(i=0; i<count; i++)
+        if(r[i]->title==search)
+            readRecord(r[i]);
+}
+
+void search_genre(my_record *r[], int count) // 장르 검색 기능
+{
+    int i, 
+    char search[50];
+
+    printf("검색할 장르을 입력하세요: ");
+    scanf("%s", search);
+
+    for(i=0; i<count; i++)
+        if(r[i]->genre==search)
+            readRecord(r[i]);
+    
+}
+
+
 void search_date(my_record *r[], int count) // 날짜 검색 기능
 {
     int i, num;
