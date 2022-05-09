@@ -20,7 +20,7 @@ void bookMark(Record *r[], int count) // 북마크 기능
     int i;
 
     printf("북마크할 제목을 입력하세요: ");
-    scancf("%s", title);
+    scanf("%s", title);
 
     for(i=0; i<count; i++)
         if(r[i]->title==title)
