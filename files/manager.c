@@ -18,7 +18,7 @@ int selectMenu(){
     return menu;
 }
 
-int addRecord(Record *r) {
+int addRecord(my_record *r) {
     
     printf("분야(책, 영화, 드라마)를 입력하세요: ");
     fgets(r->kind, 50, stdin);
@@ -38,7 +38,7 @@ int addRecord(Record *r) {
     return 1;
 }
 
-void listProduct(Record *r[], int count){
+void listProduct(my_record *r[], int count){
     printf("No\n");
     printf("================================\n");
     for(int i=0; i<count; i++){
@@ -48,12 +48,12 @@ void listProduct(Record *r[], int count){
     }
 }
 
-void readRecord(Record *r){
+void readRecord(my_record *r){
     printf("%s %s %s %d\n", r.kind, r.title, r.content, r.date);
 
 }
 
-int updateRecord(Record *r[], int index) // 하나의 데이터 수정하는 기능
+int updateRecord(my_record *r[], int index) // 하나의 데이터 수정하는 기능
 {
     int number;
 
@@ -78,7 +78,7 @@ int updateRecord(Record *r[], int index) // 하나의 데이터 수정하는 기
     return 1;
 }
 
-void saveData(Record *r[], int count)
+void saveData(my_record *r[], int count)
 {
     int i;
 
@@ -96,7 +96,7 @@ void saveData(Record *r[], int count)
     printf("=> 저장됨! ");
 }
 
-int loadData(Record *r[])
+int loadData(my_record *r[])
 {
     int count=0, i=0;
     FILE *fp;
