@@ -1,5 +1,4 @@
 #include "record.h"
-#include "manager.h"
 
 void search_title(my_record *r[], int count) // 제목 검색 기능
 {
