@@ -11,6 +11,7 @@ int selectMenu(){
     printf("6. 제목검색\n");
     printf("7. 장르검색\n");
     printf("8. 날짜검색\n");
+    printf("9. 북마크\n");
     printf("0. 기록종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
