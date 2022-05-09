@@ -49,7 +49,7 @@ void listRecord(my_record *r[], int count){
         printf("%2d ", i+1);
         readRecord(r[i]);
     }
-    printf("================================================================================= \n");
+    
 }
 
 void readRecord(my_record *r){
@@ -63,17 +63,21 @@ int updateRecord(my_record *r[], int index) // 하나의 데이터 수정하는 
 
     index--;
     printf("분야(책, 영화, 드라마)를 입력하세요: ");
-    scanf("%s" ,r[index]->kind); 
+    fgets(r[index]->kind, 50, stdin);
+    getchar();
 
-    printf("제목을 입력하세요: ");
-    scanf("%s" ,r[index]->title); 
+    printf("제목을 입력하세요: "); 
+    fgets(r[index]->title, 50, stdin);
+    getchar();
 
     printf("장르를 입력하세요: ");
-    scanf("%s" ,r[index]->genre);
+    fgets(r[index]->genre, 20, stdin);
+    getchar();
 
     printf("내용을 입력하세요: ");
-    scanf("%s" ,r[index]->content);
-    
+    fgets(r[index]->content, 100, stdin);
+    getchar();
+
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r[index]->date);
 
