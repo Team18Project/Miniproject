@@ -9,6 +9,7 @@ typedef struct
     char genre[10];
     char content[30];
     int date;
+    int bookmark;
 }Record;
 
 void search_title(Record *r[], int count); // 제목 검색 기능
