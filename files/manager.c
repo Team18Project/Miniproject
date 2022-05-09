@@ -11,6 +11,7 @@ int selectMenu(){
     printf("6. 제목검색\n");
     printf("7. 장르검색\n");
     printf("8. 날짜검색\n");
+    printf("9. 북마크\n");
     printf("0. 기록종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
@@ -38,18 +39,18 @@ int addRecord(my_record *r) {
     return 1;
 }
 
-void listProduct(my_record *r[], int count){
+void listRecord(my_record *r[], int count){
     printf("No\n");
     printf("================================\n");
     for(int i=0; i<count; i++){
         if(r[i].title == -1) continue;
         printf("%2d", i+1);
-        readProduct(r[i]);
+        readRecord(r[i]);
     }
 }
 
 void readRecord(my_record *r){
-    printf("%s %s %s %d\n", r.kind, r.title, r.content, r.date);
+    printf("%s %s %s %d\n", r->kind, r->title, r->content, r->date);
 
 }
 
