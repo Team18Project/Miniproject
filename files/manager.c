@@ -36,21 +36,24 @@ int addRecord(my_record *r) {
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r->date);
 
+    r->bookmark=0;
+
     return 1;
 }
 
 void listRecord(my_record *r[], int count){
-    printf("No\n");
-    printf("================================\n");
+    printf("| Kind |  Title  | genre |  content | date |\n");
+    printf("================================================================================= \n");
     for(int i=0; i<count; i++){
-        if(r[i].title == -1) continue;
-        printf("%2d", i+1);
+        if(r[i]->title == -1) continue;
+        printf("%2d ", i+1);
         readRecord(r[i]);
     }
+    printf("================================================================================= \n");
 }
 
 void readRecord(my_record *r){
-    printf("%s %s %s %d\n", r->kind, r->title, r->content, r->date);
+    printf("%s %s %s %s %d\n", r->kind, r->title, r->genre, r->content, r->date);
 
 }
 
@@ -119,4 +122,15 @@ int loadData(my_record *r[])
     printf("=> 로딩 성공!\n");
 
     return count;
+}
+
+int selectDataNo(my_record *r[], int count) // 번호를 선택 하는 기능
+{
+    int no;
+
+    listRecord(r, count);
+    printf("번호는 (취소 : 0)? ");
+    scanf("%d", &no);
+
+    return no;
 }
