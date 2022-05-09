@@ -1,5 +1,58 @@
 #include "manager.h"
 
+int selectMenu(){
+    int menu;
+    printf("\n*** Archive ***\n");
+    printf("1. 기록조회\n");
+    printf("2. 기록추가\n");
+    printf("3. 기록수정\n");
+    printf("4. 기록삭제\n");
+    printf("5. 기록저장\n");
+    printf("6. 제목검색\n");
+    printf("7. 장르검색\n");
+    printf("8. 날짜검색\n");
+    printf("0. 기록종료\n\n");
+    printf("=> 원하는 메뉴는? ");
+    scanf("%d", &menu);
+    getchar();
+    return menu;
+}
+
+int addRecord(Record *r) {
+    
+    printf("분야(책, 영화, 드라마)를 입력하세요: ");
+    fgets(r->kind, 50, stdin);
+
+    printf("제목을 입력하세요: "); 
+    fgets(r->title, 50, stdin);
+
+    printf("장르를 입력하세요: ");
+    fgets(r->genre, 20, stdin);
+
+    printf("내용을 입력하세요: ");
+    fgets(r->content, 100, stdin);
+    
+    printf("날짜를 입력하세요: ");
+    scanf("%d" ,&r->date);
+
+    return 1;
+}
+
+void listProduct(Record *r[], int count){
+    printf("No\n");
+    printf("================================\n");
+    for(int i=0; i<count; i++){
+        if(r[i].title == -1) continue;
+        printf("%2d", i+1);
+        readProduct(r[i]);
+    }
+}
+
+void readRecord(Record *r){
+    printf("%s %s %s %d\n", r.kind, r.title, r.content, r.date);
+
+}
+
 int updateRecord(Record *r[], int index) // 하나의 데이터 수정하는 기능
 {
     int number;
