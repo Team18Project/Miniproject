@@ -63,19 +63,19 @@ int updateRecord(my_record *r[], int index) // 하나의 데이터 수정하는 
 
     index--;
     printf("분야(책, 영화, 드라마)를 입력하세요: ");
-    scanf("%s" ,r[index]->kind); 
+    fgets(r->kind, 50, stdin);
 
-    printf("제목을 입력하세요: ");
-    scanf("%s" ,r[index]->title); 
+    printf("제목을 입력하세요: "); 
+    fgets(r->title, 50, stdin);
 
     printf("장르를 입력하세요: ");
-    scanf("%s" ,r[index]->genre);
+    fgets(r->genre, 20, stdin);
 
     printf("내용을 입력하세요: ");
-    scanf("%s" ,r[index]->content);
+    fgets(r->content, 100, stdin);
     
     printf("날짜를 입력하세요: ");
-    scanf("%d" ,&r[index]->date);
+    scanf("%d" ,&r->date);
 
     printf("수정 완료하였습니다!\n");
     
