@@ -1,4 +1,4 @@
-market: main.c record.o manager.o
+main: main.c record.o manager.o
 	gcc -o main main.c manager.o record.o
 manager: manager.c manager.h
 	gcc -c manager.c
