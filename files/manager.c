@@ -120,3 +120,14 @@ int loadData(my_record *r[])
 
     return count;
 }
+
+int selectDataNo(my_record *r[], int count) // 번호를 선택 하는 기능
+{
+    int no;
+
+    listRecord(r, count);
+    printf("번호는 (취소 : 0)? ");
+    scanf("%d", &no);
+
+    return no;
+}
