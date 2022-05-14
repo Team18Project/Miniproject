@@ -16,7 +16,7 @@ int main(void)
 
         if(menu==0)
             break;
-        if(menu==1 || menu==3 || menu==4) // list가 아직 추가가 안 되었으므로 이 메뉴들을 실행하면 할 것이 없음
+        if(menu==1 || menu==3 || menu==4) // list가 아직 추가가 안 되었으므로 이 메뉴들을 실행하면 할 것이 없기 때문에 continue를 한다
             if(count==0)
                 continue;
 
@@ -24,7 +24,7 @@ int main(void)
             listRecord(r, index); 
         else if(menu==2)
         {
-            r[index]=(my_record *)malloc(sizeof(my_record)); // 그때마다 메모리를 할당함
+            r[index]=(my_record *)malloc(sizeof(my_record));
             count+=addRecord(r[index++]); 
         }
         else if(menu==3)
@@ -52,7 +52,7 @@ int main(void)
 
             if(deletok==1)
             {
-                if(r[no-1]) // 아마도 index에 벗어난 값이 입력되면 if문이 안되는 것이다
+                if(r[no-1]) 
                     free(r[no-1]);
                 r[no-1]=NULL;
                 count--;
