@@ -73,7 +73,7 @@ int updateRecord(my_record *r, int index) // 하나의 데이터 수정하는 �
     printf("내용을 입력하세요: ");
     scanf("%s",r->content);
     getchar();
-
+  
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r->date);
 
