@@ -21,11 +21,12 @@ int main(void)
                 continue;
 
         if(menu==1)
-            listRecord(r, index); 
+            listRecord(r, count); 
         else if(menu==2)
         {
             r[index]=(my_record *)malloc(sizeof(my_record));
-            count+=addRecord(r[index++]); 
+            count+=addRecord(r[index]);
+            index++; 
         }
         else if(menu==3)
         {
@@ -36,7 +37,7 @@ int main(void)
                 continue;
             }   
 
-            updateRecord(&r[no-1], index); // no는 순수 list의 번호이므로 index로는 한번을 줄여줘야 함
+            updateRecord(r[no-1], index); // no는 순수 list의 번호이므로 index로는 한번을 줄여줘야 함
         }
         else if(menu==4)
         {
@@ -50,12 +51,10 @@ int main(void)
             printf("정말로 삭제하시겠습니까? (삭제: 1)");
             scanf("%d", &deletok);
 
-            if(deletok==1)
+            if(deletok)
             {
-                if(r[no-1]) 
-                    free(r[no-1]);
-                r[no-1]=NULL;
-                count--;
+                free(r[no-1]);
+                r[no-1]->date=-1;
             }
         }
         else if(menu==5)
