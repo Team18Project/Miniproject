@@ -57,7 +57,7 @@ void readRecord(my_record *r){
 
 }
 
-int updateRecord(my_record *r[], int index) // 하나의 데이터 수정하는 기능
+int updateRecord(my_record *r, int index) // 하나의 데이터 수정하는 기능
 {
     int number;
 
