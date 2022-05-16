@@ -15,24 +15,24 @@ int selectMenu(){
     printf("0. 기록종료\n\n");
     printf("=> 원하는 메뉴는? ");
     scanf("%d", &menu);
-    getchar();
     return menu;
 }
 
 int addRecord(my_record *r) {
     
     printf("분야(책, 영화, 드라마)를 입력하세요: ");
-    fgets(r->kind, 50, stdin);
+    scanf("%s",r->kind);
 
     printf("제목을 입력하세요: "); 
-    fgets(r->title, 50, stdin);
+    scanf("%s",r->title);
 
     printf("장르를 입력하세요: ");
-    fgets(r->genre, 20, stdin);
+    scanf("%s",r->genre);
 
     printf("내용을 입력하세요: ");
-    fgets(r->content, 100, stdin);
-    
+    scanf("%s",r->content);
+    getchar();
+
     printf("날짜를 입력하세요: ");
     scanf("%d" ,&r->date);
 
@@ -45,7 +45,7 @@ void listRecord(my_record *r[], int count){
     printf("| Kind |  Title  | genre |  content | date |\n");
     printf("================================================================================= \n");
     for(int i=0; i<count; i++){
-        if(r[i]->title == -1) continue;
+        if(r[i]->date==-1) continue;
         printf("%2d ", i+1);
         readRecord(r[i]);
     }
@@ -57,29 +57,25 @@ void readRecord(my_record *r){
 
 }
 
-int updateRecord(my_record *r[], int index) // 하나의 데이터 수정하는 기능
+int updateRecord(my_record *r, int index) // 하나의 데이터 수정하는 기능
 {
     int number;
 
-    index--;
     printf("분야(책, 영화, 드라마)를 입력하세요: ");
-    fgets(r[index]->kind, 50, stdin);
-    getchar();
+    scanf("%s",r->kind);
 
     printf("제목을 입력하세요: "); 
-    fgets(r[index]->title, 50, stdin);
-    getchar();
+    scanf("%s",r->title);
 
     printf("장르를 입력하세요: ");
-    fgets(r[index]->genre, 20, stdin);
-    getchar();
+    scanf("%s",r->genre);
 
     printf("내용을 입력하세요: ");
-    fgets(r[index]->content, 100, stdin);
+    scanf("%s",r->content);
     getchar();
 
     printf("날짜를 입력하세요: ");
-    scanf("%d" ,&r[index]->date);
+    scanf("%d" ,&r->date);
 
     printf("수정 완료하였습니다!\n");
     
